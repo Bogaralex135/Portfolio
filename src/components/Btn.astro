@@ -1,0 +1,11 @@
+---
+const { type, href } = Astro.props
+const types = {
+  primary: 'bg-tertiary text-white',
+  secondary: 'border-solid border-2 border-tertiary text-tertiary',
+}
+---
+
+<a href={href} target='_blank' class=`md:flex p-2 md:p-6 ${types[type]}`
+  ><slot /></a
+>

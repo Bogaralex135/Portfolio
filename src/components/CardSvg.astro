@@ -1,0 +1,19 @@
+---
+const { icon } = Astro.props
+
+const Icons = {
+  tailwind: '/tailwind.svg',
+  agile: '/agile.svg',
+  scrum: '/scrum.svg',
+}
+---
+
+<div
+  class='w-32 h-32 lg:w-44 lg:h-44 p-4 bg-white flex flex-col justify-end items-start gap-2'>
+  <img
+    class='lg:w-9 lg:h-9 text-tertiary'
+    src={Icons[icon]}
+    alt=`Icono de ${icon}`
+  />
+  <p class='font-bold text-sm md:text-base'><slot /></p>
+</div>

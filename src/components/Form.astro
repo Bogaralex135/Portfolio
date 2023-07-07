@@ -1,0 +1,86 @@
+---
+import InputContainer from './InputContainer.astro'
+---
+
+<section
+  class='flex px-5 md:px-10 2xl:px-40 py-3 lg:py-6 bg-secondary items-start gap-8 justify-start'
+  id='contact'>
+  <div class='hidden w-2/5 md:flex justify-end'>
+    <img
+      src='/contactimg.webp'
+      alt='Imagen de contacto'
+      class='w-full h-[600px]'
+      loading='lazy'
+    />
+  </div>
+  <div class='flex flex-col gap-2 md:w-3/5 md:justify-start'>
+    <h3 class='font-bold text-3xl'>Contacto</h3>
+    <p class='text-lg'>¿Quieres contactarme?</p>
+    <p class='text-lg'>
+      Complete el siguiente formulario y me pondré en contacto con usted lo
+      antes posible.
+    </p>
+    <form
+      id='my-form'
+      action='https://formspree.io/f/mdorooyj'
+      method='POST'
+      class='flex flex-col gap-6 mt-5 items-start'>
+      <InputContainer type='text' placeHolder='Nombre' />
+      <InputContainer type='email' placeHolder='Email' />
+      <InputContainer type='text' placeHolder='Asunto' />
+      <textarea
+        name='Mensaje'
+        id='Mensaje'
+        cols='30'
+        rows='10'
+        placeholder='Mensaje'
+        class='p-2.5 placeholder:text-blackgray border-b-2 border-solid border-blackgray focus:border-tertiary focus:outline-none rounded transition delay-150 resize-none w-full h-40'
+      ></textarea>
+
+      <button
+        class='flex items-center justify-center p-6 bg-tertiary text-white'
+        type='submit'
+        id='my-form-button'>Enviar Mensaje</button
+      >
+      <p id='my-form-status'></p>
+    </form>
+  </div>
+  <script>
+    var form = document.getElementById('my-form')
+
+    async function handleSubmit(event) {
+      event.preventDefault()
+      var status = document.getElementById('my-form-status')
+      var data = new FormData(event.target)
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+        .then(response => {
+          if (response.ok) {
+            status.innerHTML =
+              'Gracias por contactar conmigo, te escribiré pronto'
+            form.reset()
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data['errors']
+                  .map(error => error['message'])
+                  .join(', ')
+              } else {
+                status.innerHTML =
+                  'Oops! There was a problem submitting your form'
+              }
+            })
+          }
+        })
+        .catch(error => {
+          status.innerHTML = 'Oops! There was a problem submitting your form'
+        })
+    }
+    form.addEventListener('submit', handleSubmit)
+  </script>
+</section>

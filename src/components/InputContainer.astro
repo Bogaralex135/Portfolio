@@ -1,0 +1,12 @@
+---
+const { type, placeHolder } = Astro.props
+---
+
+<div class='w-full'>
+  <input
+    type={type}
+    name={placeHolder}
+    placeholder={placeHolder}
+    class='p-2.5 placeholder:text-blackgray border-b-2 border-solid border-blackgray focus:border-tertiary focus:outline-none rounded transition delay-150 w-full'
+  />
+</div>

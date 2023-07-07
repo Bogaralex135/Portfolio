@@ -1,0 +1,22 @@
+---
+const { img, plazo } = Astro.props
+
+const imagenes = {
+  udemy: '/udemy.webp',
+  one: '/one.webp',
+  coder: '/coder.webp',
+}
+---
+
+<div class='flex flex-col gap-2 md:w-1/3'>
+  <img
+    class='h-40 md:h-80'
+    src={imagenes[img]}
+    alt=`Imagen de ${img}`
+    loading='lazy'
+  />
+  <div class='md:flex items-center flex-col'>
+    <h3 class='text-sm md:text-2xl font-bold'><slot /></h3>
+    <p class='text-xs md:text-lg font-normal'>{plazo}</p>
+  </div>
+</div>

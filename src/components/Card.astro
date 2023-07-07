@@ -1,0 +1,21 @@
+---
+const { icon } = Astro.props
+
+const Icons = {
+  html: 'fa-brands fa-html5',
+  js: 'fa-brands fa-js',
+  react: 'fa-brands fa-react',
+  css: 'fa-brands fa-css3-alt',
+  python: 'fa-brands fa-python',
+  trabajoEquipo: 'fa-solid fa-people-group',
+  tiempo: 'fa-solid fa-clock',
+  resiliencia: 'fa-solid fa-face-smile-beam',
+  adaptabilidad: 'fa-solid fa-puzzle-piece',
+}
+---
+
+<div
+  class='w-32 h-32 lg:w-44 lg:h-44 p-4 bg-white flex flex-col justify-end items-start gap-2'>
+  <i class=`${Icons[icon]} text-tertiary lg:text-3xl`></i>
+  <p class='font-bold text-sm md:text-base'><slot /></p>
+</div>

@@ -1,0 +1,8 @@
+---
+const { href } = Astro.props
+---
+
+<li
+  class='mr-8 hover:text-tertiary hover:scale-110 transition-all duration-300'>
+  <a href={href}> <slot /></a>
+</li>

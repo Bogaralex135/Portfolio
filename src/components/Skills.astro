@@ -1,0 +1,33 @@
+---
+import Card from './Card.astro'
+import CardSvg from './CardSvg.astro'
+---
+
+<section
+  class='flex flex-col md:px-10 2xl:px-40 lg:py-6 bg-primary items-center gap-8'
+  id='skills'>
+  <div>
+    <p class='text-lg lg:text-[32px] font-bold'>Conocimientos</p>
+  </div>
+  <div
+    class='flex gap-4 w-full flex-wrap md:flex-nowrap justify-center items-center'>
+    <Card icon='html'>HTML</Card>
+    <Card icon='js'>JavaScript</Card>
+    <Card icon='css'>CSS</Card>
+    <Card icon='react'>React</Card>
+    <CardSvg icon='tailwind'>Tailwind</CardSvg>
+    <Card icon='python'>Python</Card>
+  </div>
+  <div>
+    <p class='text-lg lg:text-[32px] font-bold'>Habilidades Blandas</p>
+  </div>
+  <div
+    class='flex gap-4 w-full flex-wrap md:flex-nowrap justify-center items-center'>
+    <CardSvg icon='agile'>Agile</CardSvg>
+    <CardSvg icon='scrum'>Scrum</CardSvg>
+    <Card icon='trabajoEquipo'>Trabajo en equipo</Card>
+    <Card icon='tiempo'>Gestión del tiempo</Card>
+    <Card icon='resiliencia'>Resiliencia</Card>
+    <Card icon='adaptabilidad'>Adaptabilidad</Card>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import HeroLink from './HeroLink.astro'
+---
+
+<header
+  class='mobile:flex flex-wrap-reverse bg-primary px-5 md:px-10 2xl:px-40 lg:py-6'>
+  <div class='mobile:w-2/3 flex justify-center align-middle flex-col'>
+    <h1 class='text-lg md:text-2xl lg:text-6xl font-bold mb-7'>
+      Hola mi nombre es Alejandro y soy desarrollador FrontEnd con React
+    </h1>
+    <p class='text-sm lg:text-xl mb-5 font-normal'>
+      Apasionado por el trabajo en equipo y la colaboración para lograr
+      resultados excepcionales. Actualmente impulsando mi crecimiento en Oracle
+      ONE en Alura Latam.
+    </p>
+    <div class='flex mt-4'>
+      <HeroLink href='https://github.com/Bogaralex135'>GitHub</HeroLink>
+      <HeroLink
+        href='https://www.linkedin.com/in/bogar-alejandro-vázquez-mata-479846256/'>
+        Linkedin
+      </HeroLink>
+      <HeroLink href='../../public/cvespañol.pdf'>Curriculum</HeroLink>
+    </div>
+  </div>
+
+  <div class='w-1/3 mobile:flex justify-center items-center hidden'>
+    <img
+      class='rounded-full w-72'
+      src='/Perfil.webp'
+      alt='Foto de perfil de Alejandro'
+    />
+  </div>
+</header>

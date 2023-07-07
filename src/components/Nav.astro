@@ -1,0 +1,28 @@
+---
+import NavLi from './navli.astro'
+---
+
+<nav
+  class='px-5 pb-5 md:px-10 2xl:px-40 lg:py-6 flex justify-between bg-primary w-full'>
+  <a href='#' class='lg:text-2xl text-lg flex items-center font-semibold'>
+    <img class='px-2' src='/logo.svg' alt='Decoracion nav' />
+    Bogar Alejandro Vazquez Mata
+  </a>
+  <ul class='lg:flex hidden 2xl:text-xl text-lg'>
+    <NavLi href={'#aboutme'}>Sobre Mi</NavLi>
+    <NavLi href={'#skills'}>Skills</NavLi>
+    <NavLi href={'#formation'}>Formación</NavLi>
+    <NavLi href={'#experiencia'}>Experiencia</NavLi>
+    <NavLi href={'#contact'}>Contacto</NavLi>
+    <li
+      class='mr-8 hover:text-tertiary font-bold hover:scale-110 transition-all duration-300'>
+      <a href='../../public/cvespañol.pdf' target='_blank'> Curriculum</a>
+    </li>
+  </ul>
+  <a
+    class='lg:hidden hover:text-tertiary font-bold hover:scale-110 transition-all duration-300'
+    href='../../public/cvespañol.pdf'
+    target='_blank'>
+    Curriculum
+  </a>
+</nav>
